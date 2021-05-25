@@ -152,10 +152,10 @@ function LoginComponent_div_3_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4, "\u6CE8\u610F: ");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "p", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "\u5982\u679C\u53F3\u4E0A\u89D2\u7684\u4F7F\u7528\u8005\u8CC7\u8A0A\u6C92\u6709\u66F4\u65B0\uFF0C\u53EF\u4EE5\u5617\u8A66\u56DE\u5230\u9996\u9801\u4E26\u5237\u65B0\u9801\u9762\u3002");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "\u5982\u679C\u53F3\u4E0A\u89D2\u7684\u4F7F\u7528\u8005\u8CC7\u8A0A\u4E0D\u6703\u66F4\u65B0\uFF0C\u5FC5\u9808\u56DE\u5230\u9996\u9801\u4E26\u5237\u65B0\u9801\u9762\uFF0C\u56E0\u70BAAngular\u7684\u50B3\u8F38\u65B9\u5F0F\u53EA\u80FD\u59D1\u4E14\u8A2D\u5B9A\u3002");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "p", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "\u5728\u5B50\u5206\u9801(\u5982: www/article/1)\u8A66\u5716\u66F4\u65B0\u7DB2\u9801\u6703\u9020\u6210Cookie\u907A\u5931\uFF0C\u8ACB\u56DE\u5230\u9996\u9801\u91CD\u65B0\u5373\u53EF\u3002");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "\u5728\u5B50\u5206\u9801(\u5982: /article/1\u6216/login\u7B49\u7B49)\u8A66\u5716\u66F4\u65B0\u7DB2\u9801\u6703\u9020\u6210Cookie\u907A\u5931\uFF0C\u5982\u6709\u8CC7\u6599\u4E0D\u7B26\u8ACB\u56DE\u5230\u9996\u9801\u91CD\u65B0\u6574\u7406\u5373\u53EF\u3002");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "p", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](10, "\u4E0A\u67B6\u5728Github\u7684\u7DB2\u9801\uFF0C\u9664\u4E86\u9996\u9801\u4EE5\u5916\uFF0C\u91CD\u65B0\u6574\u7406\u6703\u5C0E\u5411404\u5206\u9801\uFF0C\u8A73\u60C5\u8ACB\u898B\u6700\u65B0\u6D88\u606F\u3002");

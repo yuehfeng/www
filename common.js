@@ -43,6 +43,7 @@ class ChatsAddComponent {
         this.ChatService.create(this.chat)
             .then(() => {
             console.warn('created successfully!');
+            this.chat.content = '';
         });
     }
 }
