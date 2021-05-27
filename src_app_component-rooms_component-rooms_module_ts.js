@@ -77,11 +77,13 @@ function ChatsBoardComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", item_r1.userKEY === ctx_r0.userKey);
 } }
+// import { HighlightDirective } from '../../directives/highlight.directive';
 class ChatsBoardComponent {
     constructor(ChatService) {
         this.ChatService = ChatService;
         this.roomKey = '';
         this.userKey = '';
+        this.counter = 0;
     }
     ngOnInit() {
     }
@@ -97,9 +99,17 @@ class ChatsBoardComponent {
             this.chatData = data;
         });
     }
+    handleKeyDown(event) {
+        this.counter++;
+    }
+    resetCounter() {
+        this.counter = 0;
+    }
 }
 ChatsBoardComponent.ɵfac = function ChatsBoardComponent_Factory(t) { return new (t || ChatsBoardComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](src_app_services_chat_service__WEBPACK_IMPORTED_MODULE_0__.ChatService)); };
-ChatsBoardComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: ChatsBoardComponent, selectors: [["app-chats-board"]], inputs: { roomKey: "roomKey", userKey: "userKey" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]], decls: 2, vars: 1, consts: [["class", "roomDIV", 4, "ngFor", "ngForOf"], [1, "roomDIV"], ["class", "msgBOX float-left alert alert-secondary text-left w-auto m-1 p-2", "role", "alert", 4, "ngIf"], ["class", "msgBOX float-right alert alert-primary w-auto m-1 p-2", "role", "alert", 4, "ngIf"], [1, "clearfix"], ["role", "alert", 1, "msgBOX", "float-left", "alert", "alert-secondary", "text-left", "w-auto", "m-1", "p-2"], [1, "font-weight-bold", "m-0", "p-0"], [1, "small"], [1, "m-0", "p-0"], ["role", "alert", 1, "msgBOX", "float-right", "alert", "alert-primary", "w-auto", "m-1", "p-2"]], template: function ChatsBoardComponent_Template(rf, ctx) { if (rf & 1) {
+ChatsBoardComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: ChatsBoardComponent, selectors: [["app-chats-board"]], hostBindings: function ChatsBoardComponent_HostBindings(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("keydown", function ChatsBoardComponent_keydown_HostBindingHandler($event) { return ctx.handleKeyDown($event); }, false, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵresolveWindow"]);
+    } }, inputs: { roomKey: "roomKey", userKey: "userKey" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]], decls: 2, vars: 1, consts: [["class", "roomDIV", 4, "ngFor", "ngForOf"], [1, "roomDIV"], ["class", "msgBOX float-left alert alert-secondary text-left w-auto m-1 p-2", "role", "alert", 4, "ngIf"], ["class", "msgBOX float-right alert alert-primary w-auto m-1 p-2", "role", "alert", 4, "ngIf"], [1, "clearfix"], ["role", "alert", 1, "msgBOX", "float-left", "alert", "alert-secondary", "text-left", "w-auto", "m-1", "p-2"], [1, "font-weight-bold", "m-0", "p-0"], [1, "small"], [1, "m-0", "p-0"], ["role", "alert", 1, "msgBOX", "float-right", "alert", "alert-primary", "w-auto", "m-1", "p-2"]], template: function ChatsBoardComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, ChatsBoardComponent_div_1_Template, 4, 2, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -122,12 +132,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ComponentRoomsRoutingModule": () => (/* binding */ ComponentRoomsRoutingModule)
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 9895);
 /* harmony import */ var _auth_auth_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../auth/auth.guard */ 3870);
 /* harmony import */ var _rooms_add_rooms_add_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rooms-add/rooms-add.component */ 5994);
-/* harmony import */ var _rooms_use_rooms_use_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./rooms-use/rooms-use.component */ 6508);
-/* harmony import */ var _rooms_view_rooms_view_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./rooms-view/rooms-view.component */ 7899);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _rooms_key_rooms_key_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./rooms-key/rooms-key.component */ 1659);
+/* harmony import */ var _rooms_private_rooms_private_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./rooms-private/rooms-private.component */ 897);
+/* harmony import */ var _rooms_use_rooms_use_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./rooms-use/rooms-use.component */ 6508);
+/* harmony import */ var _rooms_view_rooms_view_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./rooms-view/rooms-view.component */ 7899);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
+
+
 
 
 
@@ -138,7 +152,7 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _rooms_view_rooms_view_component__WEBPACK_IMPORTED_MODULE_3__.RoomsViewComponent
+        component: _rooms_view_rooms_view_component__WEBPACK_IMPORTED_MODULE_5__.RoomsViewComponent
     },
     {
         path: 'add',
@@ -147,15 +161,23 @@ const routes = [
     },
     {
         path: ':id',
-        component: _rooms_use_rooms_use_component__WEBPACK_IMPORTED_MODULE_2__.RoomsUseComponent
+        component: _rooms_use_rooms_use_component__WEBPACK_IMPORTED_MODULE_4__.RoomsUseComponent
+    },
+    {
+        path: 'private/:id',
+        component: _rooms_key_rooms_key_component__WEBPACK_IMPORTED_MODULE_2__.RoomsKeyComponent
+    },
+    {
+        path: 'privateRoom/:key',
+        component: _rooms_private_rooms_private_component__WEBPACK_IMPORTED_MODULE_3__.RoomsPrivateComponent
     }
 ];
 class ComponentRoomsRoutingModule {
 }
 ComponentRoomsRoutingModule.ɵfac = function ComponentRoomsRoutingModule_Factory(t) { return new (t || ComponentRoomsRoutingModule)(); };
-ComponentRoomsRoutingModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: ComponentRoomsRoutingModule });
-ComponentRoomsRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule.forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](ComponentRoomsRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule] }); })();
+ComponentRoomsRoutingModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: ComponentRoomsRoutingModule });
+ComponentRoomsRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterModule.forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterModule] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵsetNgModuleScope"](ComponentRoomsRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterModule], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterModule] }); })();
 
 
 /***/ }),
@@ -171,16 +193,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ComponentRoomsModule": () => (/* binding */ ComponentRoomsModule)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 8583);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ 8583);
 /* harmony import */ var _component_rooms_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./component-rooms-routing.module */ 5385);
 /* harmony import */ var _rooms_view_rooms_view_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rooms-view/rooms-view.component */ 7899);
 /* harmony import */ var _rooms_add_rooms_add_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./rooms-add/rooms-add.component */ 5994);
 /* harmony import */ var _rooms_details_rooms_details_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./rooms-details/rooms-details.component */ 2914);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ 3679);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/forms */ 3679);
 /* harmony import */ var _rooms_use_rooms_use_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./rooms-use/rooms-use.component */ 6508);
 /* harmony import */ var _chats_board_chats_board_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./chats-board/chats-board.component */ 4208);
 /* harmony import */ var _chats_add_chats_add_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./chats-add/chats-add.component */ 4835);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _rooms_key_rooms_key_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./rooms-key/rooms-key.component */ 1659);
+/* harmony import */ var _rooms_private_rooms_private_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./rooms-private/rooms-private.component */ 897);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 7716);
+
+
 
 
 
@@ -194,20 +220,22 @@ __webpack_require__.r(__webpack_exports__);
 class ComponentRoomsModule {
 }
 ComponentRoomsModule.ɵfac = function ComponentRoomsModule_Factory(t) { return new (t || ComponentRoomsModule)(); };
-ComponentRoomsModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineNgModule"]({ type: ComponentRoomsModule });
-ComponentRoomsModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ imports: [[
-            _angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule,
+ComponentRoomsModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineNgModule"]({ type: ComponentRoomsModule });
+ComponentRoomsModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineInjector"]({ imports: [[
+            _angular_common__WEBPACK_IMPORTED_MODULE_10__.CommonModule,
             _component_rooms_routing_module__WEBPACK_IMPORTED_MODULE_0__.ComponentRoomsRoutingModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormsModule
+            _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormsModule
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵsetNgModuleScope"](ComponentRoomsModule, { declarations: [_rooms_view_rooms_view_component__WEBPACK_IMPORTED_MODULE_1__.RoomsViewComponent,
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵsetNgModuleScope"](ComponentRoomsModule, { declarations: [_rooms_view_rooms_view_component__WEBPACK_IMPORTED_MODULE_1__.RoomsViewComponent,
         _rooms_add_rooms_add_component__WEBPACK_IMPORTED_MODULE_2__.RoomsAddComponent,
         _rooms_details_rooms_details_component__WEBPACK_IMPORTED_MODULE_3__.RoomsDetailsComponent,
         _rooms_use_rooms_use_component__WEBPACK_IMPORTED_MODULE_4__.RoomsUseComponent,
         _chats_add_chats_add_component__WEBPACK_IMPORTED_MODULE_6__.ChatsAddComponent,
-        _chats_board_chats_board_component__WEBPACK_IMPORTED_MODULE_5__.ChatsBoardComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule,
+        _chats_board_chats_board_component__WEBPACK_IMPORTED_MODULE_5__.ChatsBoardComponent,
+        _rooms_key_rooms_key_component__WEBPACK_IMPORTED_MODULE_7__.RoomsKeyComponent,
+        _rooms_private_rooms_private_component__WEBPACK_IMPORTED_MODULE_8__.RoomsPrivateComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.CommonModule,
         _component_rooms_routing_module__WEBPACK_IMPORTED_MODULE_0__.ComponentRoomsRoutingModule,
-        _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormsModule] }); })();
+        _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormsModule] }); })();
 
 
 /***/ }),
@@ -236,7 +264,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function RoomsAddComponent_div_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -251,14 +279,18 @@ class RoomsAddComponent {
         this.submitted = false;
     }
     ngOnInit() {
+        this.getRoomLength();
     }
-    saveRoom() {
-        this.room.id = this.getRoomLength() + 1;
-        this.RoomService.create(this.room)
-            .then(() => {
-            console.exception('Created new item successfully!');
-            this.submitted = true;
-        });
+    saveRoom(pri) {
+        const sumOfLength = Number(this.RoomLength);
+        if (sumOfLength >= 0) {
+            this.room.privating = pri;
+            this.room.id = sumOfLength + 1;
+            this.RoomService.create(this.room)
+                .then(() => {
+                this.submitted = true;
+            });
+        }
     }
     getRoomLength() {
         this.RoomService.getAll()
@@ -267,11 +299,10 @@ class RoomsAddComponent {
             this.RoomRegister = data;
             this.RoomLength = this.RoomRegister.length;
         });
-        return Number(this.RoomLength);
     }
 }
 RoomsAddComponent.ɵfac = function RoomsAddComponent_Factory(t) { return new (t || RoomsAddComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](src_app_services_room_service__WEBPACK_IMPORTED_MODULE_1__.RoomService)); };
-RoomsAddComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: RoomsAddComponent, selectors: [["app-rooms-add"]], decls: 25, vars: 5, consts: [["class", "p-3 mb-2 border border-3 rounded-2 border-success bg-light text-success", 4, "ngIf"], [1, "submit-form"], [1, "form-group"], ["for", "name"], ["type", "text", "id", "name", "required", "", "name", "name", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "Content"], ["id", "content", "required", "", "name", "content", "rows", "5", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "Tags"], ["type", "text", "id", "tags", "required", "", "name", "tags", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "type"], ["type", "text", "id", "type", "required", "", "name", "type", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "row", "text-center"], [1, "col-12"], [1, "btn", "btn-success", 3, "click"], [1, "p-3", "mb-2", "border", "border-3", "rounded-2", "border-success", "bg-light", "text-success"]], template: function RoomsAddComponent_Template(rf, ctx) { if (rf & 1) {
+RoomsAddComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: RoomsAddComponent, selectors: [["app-rooms-add"]], decls: 27, vars: 5, consts: [["class", "p-3 mb-2 border border-3 rounded-2 border-success bg-light text-success", 4, "ngIf"], [1, "submit-form"], [1, "form-group"], ["for", "name"], ["type", "text", "id", "name", "required", "", "name", "name", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "Content"], ["id", "content", "required", "", "name", "content", "rows", "5", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "Tags"], ["type", "text", "id", "tags", "required", "", "name", "tags", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "type"], ["type", "text", "id", "type", "required", "", "name", "type", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "row", "text-center"], [1, "col-12"], [1, "btn", "btn-success", "m-1", 3, "click"], [1, "btn", "btn-warning", "text-dark", "m-1", 3, "click"], [1, "p-3", "mb-2", "border", "border-3", "rounded-2", "border-success", "bg-light", "text-success"]], template: function RoomsAddComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "h2");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "\u65B0\u589E\u804A\u5929\u5BA4");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
@@ -313,8 +344,12 @@ RoomsAddComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](21, "div", 11);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](22, "div", 12);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](23, "button", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function RoomsAddComponent_Template_button_click_23_listener() { return ctx.saveRoom(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](24, " \u9001\u51FA ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function RoomsAddComponent_Template_button_click_23_listener() { return ctx.saveRoom(false); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](24, " \u65B0\u589E\u516C\u958B\u8A0E\u8AD6\u5BA4 ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](25, "button", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function RoomsAddComponent_Template_button_click_25_listener() { return ctx.saveRoom(true); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](26, " \u65B0\u589E\u79C1\u4EBA\u8A0E\u8AD6\u5BA4 ");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
@@ -543,6 +578,236 @@ RoomsDetailsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODU
 
 /***/ }),
 
+/***/ 1659:
+/*!******************************************************************!*\
+  !*** ./src/app/component-rooms/rooms-key/rooms-key.component.ts ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RoomsKeyComponent": () => (/* binding */ RoomsKeyComponent)
+/* harmony export */ });
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 8002);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var src_app_services_room_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/services/room.service */ 1037);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 8583);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 3679);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 9895);
+
+
+
+
+
+
+function RoomsKeyComponent_div_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " \u91D1\u9470\u932F\u8AA4\n");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} }
+function RoomsKeyComponent_div_3_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " \u91D1\u9470\u6B63\u78BA ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "a", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "\u9EDE\u6211\u524D\u5F80\u804A\u5929\u5BA4");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate1"]("routerLink", "/room/privateRoom/", ctx_r1.returnKEY, "");
+} }
+class RoomsKeyComponent {
+    constructor(RoomService) {
+        this.RoomService = RoomService;
+        this.token = false;
+        this.submitted = false;
+        this.inputKey = '';
+        this.returnKEY = '';
+    }
+    ngOnInit() {
+    }
+    checkRoom() {
+        this.RoomService.getAll()
+            .snapshotChanges()
+            .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(changes => changes.map(c => (Object.assign({ key: c.payload.key }, c.payload.val())))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(data => data.filter(d => d.key === this.inputKey)))
+            .subscribe(response => {
+            this.roomData = response;
+            this.submitted = true;
+            if (this.roomData.length === 1) {
+                this.token = true;
+                this.returnKEY = String(this.roomData[0].key);
+            }
+        });
+    }
+}
+RoomsKeyComponent.ɵfac = function RoomsKeyComponent_Factory(t) { return new (t || RoomsKeyComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](src_app_services_room_service__WEBPACK_IMPORTED_MODULE_0__.RoomService)); };
+RoomsKeyComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: RoomsKeyComponent, selectors: [["app-rooms-key"]], decls: 12, vars: 3, consts: [["class", "alert alert-warning", 4, "ngIf"], ["class", "alert alert-success", 4, "ngIf"], [1, "form-row"], ["for", "key", 1, "col-2"], ["type", "text", "id", "key", "required", "", 1, "form-control", "col-10", 3, "ngModel", "ngModelChange"], [1, "row"], [1, "col-12", "text-center", "my-2"], [1, "btn", "btn-success", 3, "click"], [1, "alert", "alert-warning"], [1, "alert", "alert-success"], [3, "routerLink"]], template: function RoomsKeyComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "\u8ACB\u8F38\u5165\u8A0E\u8AD6\u5BA4\u91D1\u9470");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, RoomsKeyComponent_div_2_Template, 2, 0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, RoomsKeyComponent_div_3_Template, 4, 1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "label", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "\u91D1\u9470");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "input", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngModelChange", function RoomsKeyComponent_Template_input_ngModelChange_7_listener($event) { return ctx.inputKey = $event; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "button", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function RoomsKeyComponent_Template_button_click_10_listener() { return ctx.checkRoom(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "\u9A57\u8B49");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.submitted && !ctx.token);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.submitted && ctx.token);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx.inputKey);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgModel, _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterLinkWithHref], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJyb29tcy1rZXkuY29tcG9uZW50LmNzcyJ9 */"] });
+
+
+/***/ }),
+
+/***/ 897:
+/*!**************************************************************************!*\
+  !*** ./src/app/component-rooms/rooms-private/rooms-private.component.ts ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RoomsPrivateComponent": () => (/* binding */ RoomsPrivateComponent)
+/* harmony export */ });
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 8002);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var src_app_services_room_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/services/room.service */ 1037);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-cookie-service */ 1584);
+/* harmony import */ var src_app_services_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/user.service */ 3071);
+/* harmony import */ var src_app_services_cookie_catcher_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/cookie-catcher.service */ 1140);
+/* harmony import */ var _chats_board_chats_board_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../chats-board/chats-board.component */ 4208);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 8583);
+/* harmony import */ var _chats_add_chats_add_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../chats-add/chats-add.component */ 4835);
+
+
+
+
+
+
+
+
+
+
+function RoomsPrivateComponent_div_7_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "app-chats-add", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("userKey", ctx_r0.userKey)("userNickname", ctx_r0.userNickname)("roomKey", ctx_r0.roomKey);
+} }
+function RoomsPrivateComponent_div_8_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, " \u767B\u5165\u5F8C\u53EF\u4EE5\u767C\u8868\u8A0A\u606F ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} }
+class RoomsPrivateComponent {
+    constructor(RoomService, route, CookieService, UserService, CookieCatcherService) {
+        this.RoomService = RoomService;
+        this.route = route;
+        this.CookieService = CookieService;
+        this.UserService = UserService;
+        this.CookieCatcherService = CookieCatcherService;
+        this.paramsKEY = '';
+        this.admin = true;
+        this.userKey = '';
+        this.userNickname = '';
+        this.roomKey = '';
+        this.public = {
+            id: 0,
+            name: '',
+            description: '',
+            tags: '',
+            people: 0,
+            messages: 0,
+        };
+        this.userKey = this.CookieService.get('userKey');
+    }
+    ngOnInit() {
+        this.getSingleRoom();
+        this.getUser(this.userKey);
+    }
+    getUser(key) {
+        this.UserService.getAll().snapshotChanges()
+            .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.map)(changes => changes.map(c => (Object.assign({ key: c.payload.key }, c.payload.val())))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.map)(data => data.filter(c => c.key === key)))
+            .subscribe(res => {
+            this.userData = res;
+            this.userNickname = String(this.userData[0].nickname);
+            this.userKey = String(this.userData[0].key);
+        });
+    }
+    getSingleRoom() {
+        this.paramsKEY = String(this.route.snapshot.paramMap.get('key'));
+        this.RoomService.getAll().snapshotChanges()
+            .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.map)(changes => changes.map(c => (Object.assign({ key: c.payload.key }, c.payload.val())))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.map)(data => data.filter(c => c.key === this.paramsKEY)))
+            .subscribe(res => {
+            this.roomData = res;
+            this.roomKey = String(this.roomData[0].key);
+            // 手動(之後再找方法)
+            this.public.id = Number(this.roomData[0]['id']);
+            this.public.name = String(this.roomData[0]['name']);
+            this.public.description = String(this.roomData[0]['description']);
+            this.public.people = Number(this.roomData[0]['people']);
+            this.public.messages = Number(this.roomData[0]['messages']);
+        });
+    }
+    checkLogin() {
+        return this.CookieCatcherService.checkUserLogin();
+    }
+}
+RoomsPrivateComponent.ɵfac = function RoomsPrivateComponent_Factory(t) { return new (t || RoomsPrivateComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_services_room_service__WEBPACK_IMPORTED_MODULE_0__.RoomService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_7__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](ngx_cookie_service__WEBPACK_IMPORTED_MODULE_8__.CookieService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_services_user_service__WEBPACK_IMPORTED_MODULE_1__.UserService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_services_cookie_catcher_service__WEBPACK_IMPORTED_MODULE_2__.CookieCatcherService)); };
+RoomsPrivateComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: RoomsPrivateComponent, selectors: [["app-rooms-private"]], decls: 10, vars: 6, consts: [[1, "text-danger", "fw-bolder"], [1, "alert", "border-2", "border-light", "bordered-2", "bg-dark", "text-warning", "bordered"], [1, "row", 2, "max-height", "500px", "overflow-y", "scroll"], [3, "roomKey", "userKey"], [1, "row", "h-50"], [4, "ngIf"], ["class", "display-6 text-center text-muted p-3", 4, "ngIf"], [1, "clearfix"], [3, "userKey", "userNickname", "roomKey"], [1, "display-6", "text-center", "text-muted", "p-3"]], template: function RoomsPrivateComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "h2", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](5, "app-chats-board", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](7, RoomsPrivateComponent_div_7_Template, 2, 3, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](8, RoomsPrivateComponent_div_8_Template, 2, 0, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](9, "div", 7);
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" \u3010\u79C1\u4EBA\u983B\u9053\u3011", ctx.public.name, " \u804A\u5929\u5BA4\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx.public.description, "\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("roomKey", ctx.roomKey)("userKey", ctx.userKey);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.checkLogin());
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx.checkLogin());
+    } }, directives: [_chats_board_chats_board_component__WEBPACK_IMPORTED_MODULE_3__.ChatsBoardComponent, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _chats_add_chats_add_component__WEBPACK_IMPORTED_MODULE_4__.ChatsAddComponent], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJyb29tcy1wcml2YXRlLmNvbXBvbmVudC5jc3MifQ== */"] });
+
+
+/***/ }),
+
 /***/ 6508:
 /*!******************************************************************!*\
   !*** ./src/app/component-rooms/rooms-use/rooms-use.component.ts ***!
@@ -561,8 +826,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-cookie-service */ 1584);
 /* harmony import */ var src_app_services_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/user.service */ 3071);
 /* harmony import */ var src_app_services_cookie_catcher_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/cookie-catcher.service */ 1140);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 8583);
 /* harmony import */ var _chats_board_chats_board_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../chats-board/chats-board.component */ 4208);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 8583);
 /* harmony import */ var _chats_add_chats_add_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../chats-add/chats-add.component */ 4835);
 
 
@@ -574,105 +839,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function RoomsUseComponent_div_4_tr_22_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "tr");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const item_r4 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r4.key);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r4.id);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r4.name);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r4.description);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r4.type);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r4.tags);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r4.people);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](item_r4.messages);
-} }
-function RoomsUseComponent_div_4_Template(rf, ctx) { if (rf & 1) {
+function RoomsUseComponent_div_7_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "h4");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "\u804A\u5929\u5BA4\u6240\u6709\u8CC7\u6599\u5217");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "table", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "thead");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6, "KEY");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](8, "ID");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](10, "NAME");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](12, "DESCRIPTION");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](14, "TYPE");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](16, "TAGS");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](18, "PEOPLE");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](19, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](20, "MESSAGES");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](21, "tbody");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](22, RoomsUseComponent_div_4_tr_22_Template, 17, 8, "tr", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "app-chats-add", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](22);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx_r0.roomData);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("userKey", ctx_r0.userKey)("userNickname", ctx_r0.userNickname)("roomKey", ctx_r0.roomKey);
 } }
 function RoomsUseComponent_div_8_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "app-chats-add", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("userKey", ctx_r1.userKey)("userNickname", ctx_r1.userNickname)("roomKey", ctx_r1.roomKey);
-} }
-function RoomsUseComponent_div_9_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, " \u767B\u5165\u5F8C\u53EF\u4EE5\u767C\u8868\u8A0A\u606F ");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } }
@@ -732,36 +909,33 @@ class RoomsUseComponent {
     }
 }
 RoomsUseComponent.ɵfac = function RoomsUseComponent_Factory(t) { return new (t || RoomsUseComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_services_room_service__WEBPACK_IMPORTED_MODULE_0__.RoomService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_7__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](ngx_cookie_service__WEBPACK_IMPORTED_MODULE_8__.CookieService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_services_user_service__WEBPACK_IMPORTED_MODULE_1__.UserService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_services_cookie_catcher_service__WEBPACK_IMPORTED_MODULE_2__.CookieCatcherService)); };
-RoomsUseComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: RoomsUseComponent, selectors: [["app-rooms-use"]], decls: 11, vars: 7, consts: [[1, "alert", "alert-secondary", "border-2", "border-light", "bordered-2"], [4, "ngIf"], [1, "row", 2, "max-height", "500px", "overflow-y", "scroll"], [3, "roomKey", "userKey"], [1, "row", "h-50"], ["class", "display-6 text-center text-muted p-3", 4, "ngIf"], [1, "clearfix"], [1, "table", "table-dark", "text-center"], [4, "ngFor", "ngForOf"], [3, "userKey", "userNickname", "roomKey"], [1, "display-6", "text-center", "text-muted", "p-3"]], template: function RoomsUseComponent_Template(rf, ctx) { if (rf & 1) {
+RoomsUseComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: RoomsUseComponent, selectors: [["app-rooms-use"]], decls: 10, vars: 6, consts: [[1, "alert", "alert-secondary", "border-2", "border-light", "bordered-2"], [1, "row", 2, "max-height", "500px", "overflow-y", "scroll"], [3, "roomKey", "userKey"], [1, "row", "h-50"], [4, "ngIf"], ["class", "display-6 text-center text-muted p-3", 4, "ngIf"], [1, "clearfix"], [3, "userKey", "userNickname", "roomKey"], [1, "display-6", "text-center", "text-muted", "p-3"]], template: function RoomsUseComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "h2");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, RoomsUseComponent_div_4_Template, 23, 1, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](6, "app-chats-board", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](5, "app-chats-board", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](8, RoomsUseComponent_div_8_Template, 2, 3, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](9, RoomsUseComponent_div_9_Template, 2, 0, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](7, RoomsUseComponent_div_7_Template, 2, 3, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](8, RoomsUseComponent_div_8_Template, 2, 0, "div", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](10, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](9, "div", 6);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"]("", ctx.public.name, " \u804A\u5929\u5BA4");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx.public.description, "\n");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx.admin);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("roomKey", ctx.roomKey)("userKey", ctx.userKey);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.checkLogin());
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx.checkLogin());
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _chats_board_chats_board_component__WEBPACK_IMPORTED_MODULE_3__.ChatsBoardComponent, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, _chats_add_chats_add_component__WEBPACK_IMPORTED_MODULE_4__.ChatsAddComponent], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJyb29tcy11c2UuY29tcG9uZW50LmNzcyJ9 */"] });
+    } }, directives: [_chats_board_chats_board_component__WEBPACK_IMPORTED_MODULE_3__.ChatsBoardComponent, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _chats_add_chats_add_component__WEBPACK_IMPORTED_MODULE_4__.ChatsAddComponent], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJyb29tcy11c2UuY29tcG9uZW50LmNzcyJ9 */"] });
 
 
 /***/ }),
@@ -798,30 +972,33 @@ function RoomsViewComponent_div_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 } }
-function RoomsViewComponent_div_4_button_18_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 14);
+function RoomsViewComponent_div_4_button_17_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " \u8F38\u5165\u91D1\u9470 ");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const item_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpropertyInterpolate1"]("routerLink", "private/", item_r2.id, "");
 } }
 function RoomsViewComponent_div_4_div_19_div_1_Template(rf, ctx) { if (rf & 1) {
-    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+    const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "app-rooms-details", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("refreshList", function RoomsViewComponent_div_4_div_19_div_1_Template_app_rooms_details_refreshList_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r8); const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](3); return ctx_r7.refreshList(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "app-rooms-details", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("refreshList", function RoomsViewComponent_div_4_div_19_div_1_Template_app_rooms_details_refreshList_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r9); const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](3); return ctx_r8.refreshList(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](3);
+    const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("room", ctx_r6.currentRoom);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("room", ctx_r7.currentRoom);
 } }
 function RoomsViewComponent_div_4_div_19_Template(rf, ctx) { if (rf & 1) {
-    const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+    const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, RoomsViewComponent_div_4_div_19_div_1_Template, 2, 1, "div", 0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "div", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "button", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function RoomsViewComponent_div_4_div_19_Template_button_click_3_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r11); const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](); const item_r2 = ctx_r10.$implicit; const i_r3 = ctx_r10.index; const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](); return ctx_r9.setActiveRoom(item_r2, i_r3); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "div", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "button", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function RoomsViewComponent_div_4_div_19_Template_button_click_3_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r12); const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](); const item_r2 = ctx_r11.$implicit; const i_r3 = ctx_r11.index; const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](); return ctx_r10.setActiveRoom(item_r2, i_r3); });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](4, " \u4FEE\u6539 ");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
@@ -846,24 +1023,25 @@ function RoomsViewComponent_div_4_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](6, "p", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](8, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](9, "span", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](8, "div", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](9, "div", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](10, "span", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](11);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](11, "span");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](12, "|");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](13, "span", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](12, "span", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](13);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](15, "p", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](16, "button", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](17, "\u52A0\u5165\u804A\u5929");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](14, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](15, "button", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](16, "\u52A0\u5165\u804A\u5929");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](18, RoomsViewComponent_div_4_button_18_Template, 2, 0, "button", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](17, RoomsViewComponent_div_4_button_17_Template, 2, 1, "button", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](18, "div", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](19, RoomsViewComponent_div_4_div_19_Template, 5, 3, "div", 0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
@@ -874,16 +1052,16 @@ function RoomsViewComponent_div_4_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](item_r2.name);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", item_r2.description, " ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" \u53C3\u52A0\u4EBA\u6578: ", item_r2.people == null ? 0 : item_r2.people, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" \u7E3D\u8A0A\u606F\u6578: ", item_r2.messages == null ? 0 : item_r2.people, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" \u4EBA\u6578: ", item_r2.people == null ? 0 : item_r2.people, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" \u8A0A\u606F: ", item_r2.messages == null ? 0 : item_r2.people, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpropertyInterpolate1"]("routerLink", "/room/", item_r2.id, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", item_r2.privating);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", item_r2.privating);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx_r1.root());
 } }
 class RoomsViewComponent {
@@ -926,7 +1104,7 @@ class RoomsViewComponent {
     }
 }
 RoomsViewComponent.ɵfac = function RoomsViewComponent_Factory(t) { return new (t || RoomsViewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_services_room_service__WEBPACK_IMPORTED_MODULE_0__.RoomService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_services_cookie_catcher_service__WEBPACK_IMPORTED_MODULE_1__.CookieCatcherService)); };
-RoomsViewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: RoomsViewComponent, selectors: [["app-rooms-view"]], decls: 7, vars: 2, consts: [[4, "ngIf"], [1, "mx-auto"], ["class", "container", 4, "ngFor", "ngForOf"], [1, "clearfix"], ["routerLink", "add", 1, "btn", "btn-success"], [1, "container"], [1, "card", "d-block", "float-start", "text-center", "m-3", 2, "width", "30%", "min-height", "250px"], [1, "card-header"], [1, "card-body"], [1, "m-2", "text-muted"], [1, "px-2"], [1, "m-3"], [1, "btn", "btn-primary", "m-1", 3, "routerLink", "disabled"], ["class", "btn btn-warning m-1", 4, "ngIf"], [1, "btn", "btn-warning", "m-1"], [1, "text-right"], [1, "btn", "btn-light", "fw-bold", "border-secondary", 3, "click"], [3, "room", "refreshList"]], template: function RoomsViewComponent_Template(rf, ctx) { if (rf & 1) {
+RoomsViewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: RoomsViewComponent, selectors: [["app-rooms-view"]], decls: 7, vars: 2, consts: [[4, "ngIf"], [1, "mx-auto"], ["class", "container", 4, "ngFor", "ngForOf"], [1, "clearfix"], ["routerLink", "add", 1, "btn", "btn-success"], [1, "container"], [1, "card", "w-50", "d-block", "float-start", "text-center"], [1, "card-header"], [1, "card-body"], [1, "m-2", "text-muted"], [1, "row"], [1, "col-3"], [1, "px-1"], [1, "col-6"], [1, "btn", "btn-primary", "m-1", 3, "routerLink", "disabled"], ["class", "btn btn-warning m-1", 3, "routerLink", 4, "ngIf"], [1, "btn", "btn-warning", "m-1", 3, "routerLink"], [1, "text-right"], [1, "btn", "btn-light", "fw-bold", "border-secondary", 3, "click"], [3, "room", "refreshList"]], template: function RoomsViewComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "h2");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, "\u8A0E\u8AD6\u5BA4");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();

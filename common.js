@@ -135,6 +135,23 @@ class Chat {
 
 /***/ }),
 
+/***/ 4872:
+/*!**************************************!*\
+  !*** ./src/app/models/user.model.ts ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "User": () => (/* binding */ User)
+/* harmony export */ });
+class User {
+}
+
+
+/***/ }),
+
 /***/ 9014:
 /*!******************************************!*\
   !*** ./src/app/services/chat.service.ts ***!
